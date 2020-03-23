@@ -44,7 +44,7 @@ Add multi-authentication support to [Laravel Passport](https://laravel.com/docs/
 Install using composer:
 
 ```sh
-$ composer require smartins/passport-multiauth
+$ composer require gviana/passport-multiauth
 ```
 
 To all works fine, we need to ensure that the `GViana\PassportMultiauth\Providers\MultiauthServiceProvider::class` service provider
