@@ -5,13 +5,13 @@
 Change version on `composer.json`:
 
 ```json
-"smartins/passport-multiauth": "^5.0",
+"gviana/passport-multiauth": "^5.0",
 ```
 
 Update using composer:
 
 ```sh
-$ composer update smartins/passport-multiauth
+$ composer update gviana/passport-multiauth
 ```
 
 To all works fine, we need to ensure that the `GViana\PassportMultiauth\Providers\MultiauthServiceProvider::class` service provider
@@ -112,7 +112,7 @@ In short, the param `provider` is required and must exists on `config/auth.php` 
 
 ### Updating Dependencies
 
-Update the `smartins/passport-multiauth` dependency to `^2.0` in your `composer.json` file.
+Update the `gviana/passport-multiauth` dependency to `^2.0` in your `composer.json` file.
 
 **OBS:** If you have problems using `laravel/passport` `2.0.*` please update to >= `3.0`.
 

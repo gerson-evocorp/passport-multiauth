@@ -1,11 +1,11 @@
 # Laravel Passport Multi-Auth
 
-[![Latest Stable Version](https://poser.pugx.org/smartins/passport-multiauth/v/stable)](https://packagist.org/packages/smartins/passport-multiauth)
+[![Latest Stable Version](https://poser.pugx.org/gviana/passport-multiauth/v/stable)](https://packagist.org/packages/gviana/passport-multiauth)
 [![Build Status](https://travis-ci.org/sfelix-martins/passport-multiauth.svg?branch=6.x)](https://travis-ci.org/sfelix-martins/passport-multiauth)
 [![Code Coverage](https://scrutinizer-ci.com/g/sfelix-martins/passport-multiauth/badges/coverage.png?b=6.x)](https://scrutinizer-ci.com/g/sfelix-martins/passport-multiauth/?branch=6.x)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/sfelix-martins/passport-multiauth/badges/quality-score.png?b=6.x)](https://scrutinizer-ci.com/g/sfelix-martins/passport-multiauth/?branch=6.x)
 [![StyleCI](https://styleci.io/repos/106218586/shield?branch=6.x)](https://styleci.io/repos/106218586)
-[![License](https://poser.pugx.org/smartins/passport-multiauth/license)](https://packagist.org/packages/smartins/passport-multiauth)
+[![License](https://poser.pugx.org/gviana/passport-multiauth/license)](https://packagist.org/packages/gviana/passport-multiauth)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=AEXFGV23MM386&source=url)
 
 Add multi-authentication support to [Laravel Passport](https://laravel.com/docs/5.5/passport)
