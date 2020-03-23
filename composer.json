@@ -12,6 +12,7 @@
 	{
 	    "name": "Gerson Viana",
 	    "email": "gerson@evocorp.com.br"
+	}
     ],
     "minimum-stability": "dev",
     "prefer-stable": true,
