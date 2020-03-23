@@ -14,7 +14,7 @@ Update using composer:
 $ composer update smartins/passport-multiauth
 ```
 
-To all works fine, we need to ensure that the `SMartins\PassportMultiauth\Providers\MultiauthServiceProvider::class` service provider
+To all works fine, we need to ensure that the `GViana\PassportMultiauth\Providers\MultiauthServiceProvider::class` service provider
 be registered before `Laravel\Passport\PassportServiceProvider::class`.
 
 Firstly, you will remove the `laravel/passport` package from Laravel [Package Discovery](https://laravel.com/docs/5.8/packages#package-discovery).
@@ -36,12 +36,12 @@ And register the providers manually on `config/app.php`:
 ```php
     'providers' => [
         // ...
-        SMartins\PassportMultiauth\Providers\MultiauthServiceProvider::class,
+        GViana\PassportMultiauth\Providers\MultiauthServiceProvider::class,
         Laravel\Passport\PassportServiceProvider::class,
     ],
 ```
 
-**WARNING:** The provider `SMartins\PassportMultiauth\Providers\MultiauthServiceProvider::class` MUST be added before `Laravel\Passport\PassportServiceProvider::class` to it works fine.
+**WARNING:** The provider `GViana\PassportMultiauth\Providers\MultiauthServiceProvider::class` MUST be added before `Laravel\Passport\PassportServiceProvider::class` to it works fine.
 
 Clear the bootstrap cache files to re-register the providers:
 
@@ -51,7 +51,7 @@ php artisan optimize:clear
 
 ## Upgrading to 3.0 from 2.0
 
-You just should asserts that your requests to routes wrapped by middleware `\SMartins\PassportMultiauth\Http\Middleware\AddCustomProvider::class` has the `provider` param passing the desired provider.
+You just should asserts that your requests to routes wrapped by middleware `\GViana\PassportMultiauth\Http\Middleware\AddCustomProvider::class` has the `provider` param passing the desired provider.
 
 E.g.:
 
@@ -118,8 +118,8 @@ Update the `smartins/passport-multiauth` dependency to `^2.0` in your `composer.
 
 ### Update configs
 
-On `app/Http/Kernel.php` remove the `SMartins\PassportMultiauth\Http\Middleware\ConfigAccessTokenCustomProvider` from your middlewares.
-Now you need just of `SMartins\PassportMultiauth\Http\Middleware\AddCustomProvider::class` to use in your `forAccessTokens` `Laravel/Passport` routes. Replace the default `auth` middleware from `Illuminate\Auth\Middleware\Authenticate::class` to `SMartins\PassportMultiauth\Http\Middleware\MultiAuthenticate::class`:
+On `app/Http/Kernel.php` remove the `GViana\PassportMultiauth\Http\Middleware\ConfigAccessTokenCustomProvider` from your middlewares.
+Now you need just of `GViana\PassportMultiauth\Http\Middleware\AddCustomProvider::class` to use in your `forAccessTokens` `Laravel/Passport` routes. Replace the default `auth` middleware from `Illuminate\Auth\Middleware\Authenticate::class` to `GViana\PassportMultiauth\Http\Middleware\MultiAuthenticate::class`:
 
 ```php
 class Kernel extends HttpKernel
@@ -136,13 +136,13 @@ class Kernel extends HttpKernel
     protected $routeMiddleware = [
         // ** Replace auth middleware **
         // 'auth' => \Illuminate\Auth\Middleware\Authenticate::class,
-        'auth' => \SMartins\PassportMultiauth\Http\Middleware\MultiAuthenticate::class,
+        'auth' => \GViana\PassportMultiauth\Http\Middleware\MultiAuthenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         // Keep the `AddCustomProvider`
-        'oauth.providers' => \SMartins\PassportMultiauth\Http\Middleware\AddCustomProvider::class,
+        'oauth.providers' => \GViana\PassportMultiauth\Http\Middleware\AddCustomProvider::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
     ];
 
@@ -235,8 +235,8 @@ On older major release (v1.0), to use scopes you should replace the `Laravel\Pas
 
 ```php
 // On version 1.0.
-    'multiauth.scope' => \SMartins\PassportMultiauth\Http\Middleware\MultiAuthCheckForAnyScope::class,
-    'multiauth.scopes' => \SMartins\PassportMultiauth\Http\Middleware\MultiAuthCheckScopes::class,
+    'multiauth.scope' => \GViana\PassportMultiauth\Http\Middleware\MultiAuthCheckForAnyScope::class,
+    'multiauth.scopes' => \GViana\PassportMultiauth\Http\Middleware\MultiAuthCheckScopes::class,
 ```
 
 On version 2.0 you must do the opposite way. Just uses the default middlewares from `Larave\Passport`:
@@ -251,13 +251,13 @@ Read more about laravel passport scopes on [official docs](https://laravel.com/d
 
 ### Unit tests
 
-Instead to use the `Laravel\Passport\Passport::actingAs()` method, use `SMartins\PassportMultiauth\PassportMultiauth::actingAs()`.
+Instead to use the `Laravel\Passport\Passport::actingAs()` method, use `GViana\PassportMultiauth\PassportMultiauth::actingAs()`.
 The difference is that the `actingAs` from this package get the guard based on `Authenticatable` instance passed on first parameter and authenticate this user using your guard. E.g.:
 
 ```php
 use App\User;
 use Tests\TestCase;
-use SMartins\PassportMultiauth\PassportMultiauth;
+use GViana\PassportMultiauth\PassportMultiauth;
 
 class AuthTest extends TestCase
 {

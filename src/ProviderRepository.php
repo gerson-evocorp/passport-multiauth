@@ -1,6 +1,6 @@
 <?php
 
-namespace SMartins\PassportMultiauth;
+namespace GViana\PassportMultiauth;
 
 use Carbon\Carbon;
 
@@ -10,7 +10,7 @@ class ProviderRepository
      * Find on `oauth_access_token_providers` table by `oauth_access_token_id`.
      *
      * @param  string $tokenId
-     * @return \SMartins\PassportMultiauth\Provider|null
+     * @return \GViana\PassportMultiauth\Provider|null
      */
     public function findForToken($tokenId)
     {
@@ -22,7 +22,7 @@ class ProviderRepository
      *
      * @param string $token
      * @param string $provider
-     * @return \SMartins\PassportMultiauth\Provider
+     * @return \GViana\PassportMultiauth\Provider
      * @throws \Exception
      */
     public function create($token, $provider)

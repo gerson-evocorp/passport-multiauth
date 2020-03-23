@@ -1,6 +1,6 @@
 <?php
 
-namespace SMartins\PassportMultiauth\Tests\Feature;
+namespace GViana\PassportMultiauth\Tests\Feature;
 
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Http\Request;
@@ -8,11 +8,11 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Laravel\Passport\Client;
 use Laravel\Passport\Passport;
-use SMartins\PassportMultiauth\Http\Middleware\AddCustomProvider;
-use SMartins\PassportMultiauth\PassportMultiauth;
-use SMartins\PassportMultiauth\Tests\Fixtures\Models\Company;
-use SMartins\PassportMultiauth\Tests\Fixtures\Models\User;
-use SMartins\PassportMultiauth\Tests\TestCase;
+use GViana\PassportMultiauth\Http\Middleware\AddCustomProvider;
+use GViana\PassportMultiauth\PassportMultiauth;
+use GViana\PassportMultiauth\Tests\Fixtures\Models\Company;
+use GViana\PassportMultiauth\Tests\Fixtures\Models\User;
+use GViana\PassportMultiauth\Tests\TestCase;
 
 class MultiauthTest extends TestCase
 {

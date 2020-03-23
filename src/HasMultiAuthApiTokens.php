@@ -1,14 +1,14 @@
 <?php
 
-namespace SMartins\PassportMultiauth;
+namespace GViana\PassportMultiauth;
 
 use Illuminate\Container\Container;
 use Laravel\Passport\HasApiTokens as BaseHasApiTokens;
 use Laravel\Passport\PersonalAccessTokenFactory;
 use Laravel\Passport\PersonalAccessTokenResult;
 use Laravel\Passport\Token;
-use SMartins\PassportMultiauth\Config\AuthConfigHelper;
-use SMartins\PassportMultiauth\Exceptions\MissingConfigException;
+use GViana\PassportMultiauth\Config\AuthConfigHelper;
+use GViana\PassportMultiauth\Exceptions\MissingConfigException;
 
 trait HasMultiAuthApiTokens
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace SMartins\PassportMultiauth\Http\Middleware;
+namespace GViana\PassportMultiauth\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;

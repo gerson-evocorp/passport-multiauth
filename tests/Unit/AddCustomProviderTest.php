@@ -1,12 +1,12 @@
 <?php
 
-namespace SMartins\PassportMultiauth\Tests\Unit;
+namespace GViana\PassportMultiauth\Tests\Unit;
 
 use Illuminate\Http\Request;
 use League\OAuth2\Server\Exception\OAuthServerException;
 use Mockery;
-use SMartins\PassportMultiauth\Http\Middleware\AddCustomProvider;
-use SMartins\PassportMultiauth\Tests\TestCase;
+use GViana\PassportMultiauth\Http\Middleware\AddCustomProvider;
+use GViana\PassportMultiauth\Tests\TestCase;
 
 class AddCustomProviderTest extends TestCase
 {

@@ -1,15 +1,15 @@
 <?php
 
-namespace SMartins\PassportMultiauth\Tests;
+namespace GViana\PassportMultiauth\Tests;
 
 use Illuminate\Foundation\Bootstrap\LoadEnvironmentVariables;
 use Laravel\Passport\PassportServiceProvider;
 use Orchestra\Database\ConsoleServiceProvider;
 use Orchestra\Testbench\TestCase as BaseTestCase;
-use SMartins\PassportMultiauth\Providers\MultiauthServiceProvider;
-use SMartins\PassportMultiauth\Tests\Fixtures\Http\Kernel;
-use SMartins\PassportMultiauth\Tests\Fixtures\Models\Company;
-use SMartins\PassportMultiauth\Tests\Fixtures\Models\User;
+use GViana\PassportMultiauth\Providers\MultiauthServiceProvider;
+use GViana\PassportMultiauth\Tests\Fixtures\Http\Kernel;
+use GViana\PassportMultiauth\Tests\Fixtures\Models\Company;
+use GViana\PassportMultiauth\Tests\Fixtures\Models\User;
 
 abstract class TestCase extends BaseTestCase
 {

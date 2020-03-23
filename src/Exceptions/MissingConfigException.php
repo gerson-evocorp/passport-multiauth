@@ -1,6 +1,6 @@
 <?php
 
-namespace SMartins\PassportMultiauth\Exceptions;
+namespace GViana\PassportMultiauth\Exceptions;
 
 use Exception;
 use Illuminate\Contracts\Auth\Authenticatable;

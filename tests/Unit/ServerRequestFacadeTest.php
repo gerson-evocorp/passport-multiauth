@@ -1,10 +1,10 @@
 <?php
 
-namespace SMartins\PassportMultiauth\Tests\Unit;
+namespace GViana\PassportMultiauth\Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ServerRequestInterface;
-use SMartins\PassportMultiauth\Facades\ServerRequest;
+use GViana\PassportMultiauth\Facades\ServerRequest;
 use Symfony\Component\HttpFoundation\Request;
 
 class ServerRequestFacadeTest extends TestCase

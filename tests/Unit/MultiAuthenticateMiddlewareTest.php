@@ -1,15 +1,15 @@
 <?php
 
-namespace SMartins\PassportMultiauth\Tests\Unit;
+namespace GViana\PassportMultiauth\Tests\Unit;
 
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Http\Request;
 use League\OAuth2\Server\Exception\OAuthServerException;
 use Mockery;
-use SMartins\PassportMultiauth\Http\Middleware\MultiAuthenticate;
-use SMartins\PassportMultiauth\Provider;
-use SMartins\PassportMultiauth\Tests\Fixtures\Models\Company;
-use SMartins\PassportMultiauth\Tests\TestCase;
+use GViana\PassportMultiauth\Http\Middleware\MultiAuthenticate;
+use GViana\PassportMultiauth\Provider;
+use GViana\PassportMultiauth\Tests\Fixtures\Models\Company;
+use GViana\PassportMultiauth\Tests\TestCase;
 use Zend\Diactoros\ServerRequest;
 
 class MultiAuthenticateMiddlewareTest extends TestCase
@@ -44,7 +44,7 @@ class MultiAuthenticateMiddlewareTest extends TestCase
 
         $resourceServer = Mockery::mock('League\OAuth2\Server\ResourceServer');
 
-        $repository = Mockery::mock('SMartins\PassportMultiauth\ProviderRepository');
+        $repository = Mockery::mock('GViana\PassportMultiauth\ProviderRepository');
 
         $request = $this->createRequest();
 
@@ -63,7 +63,7 @@ class MultiAuthenticateMiddlewareTest extends TestCase
         $resourceServer = Mockery::mock('League\OAuth2\Server\ResourceServer');
         $resourceServer->shouldReceive('validateAuthenticatedRequest')->andReturn($psr);
 
-        $repository = Mockery::mock('SMartins\PassportMultiauth\ProviderRepository');
+        $repository = Mockery::mock('GViana\PassportMultiauth\ProviderRepository');
 
         $request = $this->createRequest();
 
@@ -82,7 +82,7 @@ class MultiAuthenticateMiddlewareTest extends TestCase
         $resourceServer = Mockery::mock('League\OAuth2\Server\ResourceServer');
         $resourceServer->shouldReceive('validateAuthenticatedRequest')->andReturn($psr);
 
-        $repository = Mockery::mock('SMartins\PassportMultiauth\ProviderRepository');
+        $repository = Mockery::mock('GViana\PassportMultiauth\ProviderRepository');
         $repository->shouldReceive('findForToken')->andReturn(null);
 
         $request = $this->createRequest();
@@ -103,7 +103,7 @@ class MultiAuthenticateMiddlewareTest extends TestCase
         $tokenProvider = new Provider;
         $tokenProvider->provider = 'companies';
 
-        $repository = Mockery::mock('SMartins\PassportMultiauth\ProviderRepository');
+        $repository = Mockery::mock('GViana\PassportMultiauth\ProviderRepository');
         $repository->shouldReceive('findForToken')->andReturn($tokenProvider);
 
         $request = $this->createRequest();
@@ -133,7 +133,7 @@ class MultiAuthenticateMiddlewareTest extends TestCase
         $tokenProvider = new Provider;
         $tokenProvider->provider = 'companies';
 
-        $repository = Mockery::mock('SMartins\PassportMultiauth\ProviderRepository');
+        $repository = Mockery::mock('GViana\PassportMultiauth\ProviderRepository');
         $repository->shouldReceive('findForToken')->andReturn($tokenProvider);
 
         $request = $this->createRequest();
@@ -152,7 +152,7 @@ class MultiAuthenticateMiddlewareTest extends TestCase
         $resourceServer->method('validateAuthenticatedRequest')
             ->will($this->throwException(OAuthServerException::accessDenied('Missing "Authorization" header')));
 
-        $repository = Mockery::mock('SMartins\PassportMultiauth\ProviderRepository');
+        $repository = Mockery::mock('GViana\PassportMultiauth\ProviderRepository');
         $repository->shouldReceive('findForToken')->andReturn(null);
 
         $request = Request::create('/');

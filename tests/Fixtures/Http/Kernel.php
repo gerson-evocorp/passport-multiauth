@@ -1,6 +1,6 @@
 <?php
 
-namespace SMartins\PassportMultiauth\Tests\Fixtures\Http;
+namespace GViana\PassportMultiauth\Tests\Fixtures\Http;
 
 use Orchestra\Testbench\Http\Kernel as HttpKernel;
 use Orchestra\Testbench\Http\Middleware\RedirectIfAuthenticated;
@@ -15,8 +15,8 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'auth' => \SMartins\PassportMultiauth\Http\Middleware\MultiAuthenticate::class,
-        'oauth.providers' => \SMartins\PassportMultiauth\Http\Middleware\AddCustomProvider::class,
+        'auth' => \GViana\PassportMultiauth\Http\Middleware\MultiAuthenticate::class,
+        'oauth.providers' => \GViana\PassportMultiauth\Http\Middleware\AddCustomProvider::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
         'can' => \Illuminate\Auth\Middleware\Authorize::class,

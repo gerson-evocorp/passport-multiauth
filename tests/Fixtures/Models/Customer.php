@@ -1,6 +1,6 @@
 <?php
 
-namespace SMartins\PassportMultiauth\Tests\Fixtures\Models;
+namespace GViana\PassportMultiauth\Tests\Fixtures\Models;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 

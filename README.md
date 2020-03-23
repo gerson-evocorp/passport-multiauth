@@ -47,7 +47,7 @@ Install using composer:
 $ composer require smartins/passport-multiauth
 ```
 
-To all works fine, we need to ensure that the `SMartins\PassportMultiauth\Providers\MultiauthServiceProvider::class` service provider
+To all works fine, we need to ensure that the `GViana\PassportMultiauth\Providers\MultiauthServiceProvider::class` service provider
 be registered before `Laravel\Passport\PassportServiceProvider::class`.
 
 Firstly, you will remove the `laravel/passport` package from Laravel [Package Discovery](https://laravel.com/docs/5.8/packages#package-discovery).
@@ -69,12 +69,12 @@ And register the providers manually on `config/app.php`:
 ```php
     'providers' => [
         // ...
-        SMartins\PassportMultiauth\Providers\MultiauthServiceProvider::class,
+        GViana\PassportMultiauth\Providers\MultiauthServiceProvider::class,
         Laravel\Passport\PassportServiceProvider::class,
     ],
 ```
 
-**WARNING:** The provider `SMartins\PassportMultiauth\Providers\MultiauthServiceProvider::class` MUST be added before `Laravel\Passport\PassportServiceProvider::class` to it works fine.
+**WARNING:** The provider `GViana\PassportMultiauth\Providers\MultiauthServiceProvider::class` MUST be added before `Laravel\Passport\PassportServiceProvider::class` to it works fine.
 
 Maybe you will need clear the bootstrap cache files to re-register the providers:
 
@@ -94,7 +94,7 @@ $ php artisan migrate
 $ php artisan passport:install
 ``` 
 
-Instead of using the `Laravel\Passport\HasApiTokens` trait from [Laravel Passport](https://laravel.com/docs/5.6/passport#installation) core, use the trait `SMartins\PassportMultiauth\HasMultiAuthApiTokens`. 
+Instead of using the `Laravel\Passport\HasApiTokens` trait from [Laravel Passport](https://laravel.com/docs/5.6/passport#installation) core, use the trait `GViana\PassportMultiauth\HasMultiAuthApiTokens`. 
 
 Internally, this `HasMultiAuthApiTokens` uses the `HasApiTokens`, overriding the methods `tokens()` and `createToken($name, $scopes = [])`. 
 The behavior of the method `tokens()` was changed to join with the table `oauth_access_token_providers` getting just the tokens created
@@ -112,7 +112,7 @@ Configure your model:
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use SMartins\PassportMultiauth\HasMultiAuthApiTokens;
+use GViana\PassportMultiauth\HasMultiAuthApiTokens;
 
 class Admin extends Authenticatable
 {
@@ -185,7 +185,7 @@ class Kernel extends HttpKernel
      */
     protected $routeMiddleware = [
         // ...
-        'oauth.providers' => \SMartins\PassportMultiauth\Http\Middleware\AddCustomProvider::class,
+        'oauth.providers' => \GViana\PassportMultiauth\Http\Middleware\AddCustomProvider::class,
     ];
 
     // ...
@@ -213,12 +213,12 @@ class Kernel extends HttpKernel
     protected $routeMiddleware = [
         'auth' => \Illuminate\Auth\Middleware\Authenticate::class,
         // ** New middleware **
-        'multiauth' => \SMartins\PassportMultiauth\Http\Middleware\MultiAuthenticate::class,
+        'multiauth' => \GViana\PassportMultiauth\Http\Middleware\MultiAuthenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
-        'oauth.providers' => \SMartins\PassportMultiauth\Http\Middleware\AddCustomProvider::class,
+        'oauth.providers' => \GViana\PassportMultiauth\Http\Middleware\AddCustomProvider::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
     ];
 
@@ -268,10 +268,10 @@ class AuthServiceProvider extends ServiceProvider
 Just run the `vendor:publish` artisan command with package provider as parameter:
 
 ```sh
-$ php artisan vendor:publish --provider="SMartins\PassportMultiauth\Providers\MultiauthServiceProvider"
+$ php artisan vendor:publish --provider="GViana\PassportMultiauth\Providers\MultiauthServiceProvider"
 ```
 
-If you are not going to use PassportMultiauth's default migrations, you should call the `SMartins\PassportMultiauth\PassportMultiauth::ignoreMigrations` method in the register method of your AppServiceProvider.
+If you are not going to use PassportMultiauth's default migrations, you should call the `GViana\PassportMultiauth\PassportMultiauth::ignoreMigrations` method in the register method of your AppServiceProvider.
 
 ## Usage
 
@@ -359,7 +359,7 @@ protected $routeMiddleware = [
 
 ### Personal Access Tokens
 
-In your model that uses the trait `SMartins\PassportMultiauth\HasMultiAuthApiTokens` you can uses the methods `createToken($name, $scopes = [])` and `tokens()` to manage your personal access tokens. E.g.:
+In your model that uses the trait `GViana\PassportMultiauth\HasMultiAuthApiTokens` you can uses the methods `createToken($name, $scopes = [])` and `tokens()` to manage your personal access tokens. E.g.:
 
 ```php
 
@@ -394,13 +394,13 @@ Exists an opened [issues](https://github.com/sfelix-martins/passport-multiauth/i
 
 ### Unit tests
 
-Instead to use the `Laravel\Passport\Passport::actingAs()` method, use `SMartins\PassportMultiauth\PassportMultiauth::actingAs()`.
-The difference is that the `actingAs` from this package get the guard based on `Authenticatable` instance passed on first parameter and authenticate this user using your guard. On authenticated request (Using `auth` middleware from package -  `SMartins\PassportMultiauth\Http\Middleware\MultiAuthenticate)` the guard is checked on `Request` to return the user or throws a `Unauthenticated` exception. E.g.:
+Instead to use the `Laravel\Passport\Passport::actingAs()` method, use `GViana\PassportMultiauth\PassportMultiauth::actingAs()`.
+The difference is that the `actingAs` from this package get the guard based on `Authenticatable` instance passed on first parameter and authenticate this user using your guard. On authenticated request (Using `auth` middleware from package -  `GViana\PassportMultiauth\Http\Middleware\MultiAuthenticate)` the guard is checked on `Request` to return the user or throws a `Unauthenticated` exception. E.g.:
 
 ```php
 use App\User;
 use Tests\TestCase;
-use SMartins\PassportMultiauth\PassportMultiauth;
+use GViana\PassportMultiauth\PassportMultiauth;
 
 class AuthTest extends TestCase
 {

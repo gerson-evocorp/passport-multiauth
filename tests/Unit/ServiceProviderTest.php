@@ -1,13 +1,13 @@
 <?php
 
-namespace SMartins\PassportMultiauth\Tests\Unit;
+namespace GViana\PassportMultiauth\Tests\Unit;
 
 use Illuminate\Database\Capsule\Manager as DB;
 use Illuminate\Database\Eloquent\Model as Eloquent;
 use Laravel\Passport\Events\AccessTokenCreated;
-use SMartins\PassportMultiauth\Provider;
-use SMartins\PassportMultiauth\Providers\MultiauthServiceProvider;
-use SMartins\PassportMultiauth\Tests\TestCase;
+use GViana\PassportMultiauth\Provider;
+use GViana\PassportMultiauth\Providers\MultiauthServiceProvider;
+use GViana\PassportMultiauth\Tests\TestCase;
 
 class ServiceProviderTest extends TestCase
 {

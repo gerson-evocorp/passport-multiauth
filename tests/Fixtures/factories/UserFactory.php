@@ -2,7 +2,7 @@
 
 use Faker\Generator as Faker;
 use Illuminate\Support\Str;
-use SMartins\PassportMultiauth\Tests\Fixtures\Models\User;
+use GViana\PassportMultiauth\Tests\Fixtures\Models\User;
 
 /*
 |--------------------------------------------------------------------------

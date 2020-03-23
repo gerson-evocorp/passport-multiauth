@@ -1,10 +1,10 @@
 <?php
 
-namespace SMartins\PassportMultiauth\Tests\Unit;
+namespace GViana\PassportMultiauth\Tests\Unit;
 
-use SMartins\PassportMultiauth\Provider;
-use SMartins\PassportMultiauth\ProviderRepository;
-use SMartins\PassportMultiauth\Tests\TestCase;
+use GViana\PassportMultiauth\Provider;
+use GViana\PassportMultiauth\ProviderRepository;
+use GViana\PassportMultiauth\Tests\TestCase;
 
 class ProviderRepositoryTest extends TestCase
 {

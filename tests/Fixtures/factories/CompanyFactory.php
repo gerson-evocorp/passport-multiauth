@@ -13,7 +13,7 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(\SMartins\PassportMultiauth\Tests\Fixtures\Models\Company::class, function (Faker $faker) {
+$factory->define(\GViana\PassportMultiauth\Tests\Fixtures\Models\Company::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,

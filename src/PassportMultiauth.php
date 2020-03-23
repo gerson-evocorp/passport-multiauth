@@ -1,13 +1,13 @@
 <?php
 
-namespace SMartins\PassportMultiauth;
+namespace GViana\PassportMultiauth;
 
 use Exception;
 use Illuminate\Support\Facades\App;
 use Laravel\Passport\HasApiTokens;
 use Laravel\Passport\Token;
 use Mockery;
-use SMartins\PassportMultiauth\Config\AuthConfigHelper;
+use GViana\PassportMultiauth\Config\AuthConfigHelper;
 
 class PassportMultiauth
 {

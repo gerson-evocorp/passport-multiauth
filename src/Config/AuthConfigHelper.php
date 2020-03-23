@@ -1,9 +1,9 @@
 <?php
 
-namespace SMartins\PassportMultiauth\Config;
+namespace GViana\PassportMultiauth\Config;
 
 use Illuminate\Contracts\Auth\Authenticatable;
-use SMartins\PassportMultiauth\Exceptions\MissingConfigException;
+use GViana\PassportMultiauth\Exceptions\MissingConfigException;
 
 class AuthConfigHelper
 {

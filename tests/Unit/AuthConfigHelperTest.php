@@ -1,13 +1,13 @@
 <?php
 
-namespace SMartins\PassportMultiauth\Tests\Unit;
+namespace GViana\PassportMultiauth\Tests\Unit;
 
-use SMartins\PassportMultiauth\Config\AuthConfigHelper;
-use SMartins\PassportMultiauth\Exceptions\MissingConfigException;
-use SMartins\PassportMultiauth\Tests\Fixtures\Models\Company;
-use SMartins\PassportMultiauth\Tests\Fixtures\Models\Customer;
-use SMartins\PassportMultiauth\Tests\Fixtures\Models\User;
-use SMartins\PassportMultiauth\Tests\TestCase;
+use GViana\PassportMultiauth\Config\AuthConfigHelper;
+use GViana\PassportMultiauth\Exceptions\MissingConfigException;
+use GViana\PassportMultiauth\Tests\Fixtures\Models\Company;
+use GViana\PassportMultiauth\Tests\Fixtures\Models\Customer;
+use GViana\PassportMultiauth\Tests\Fixtures\Models\User;
+use GViana\PassportMultiauth\Tests\TestCase;
 
 class AuthConfigHelperTest extends TestCase
 {

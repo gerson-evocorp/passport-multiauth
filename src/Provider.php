@@ -1,6 +1,6 @@
 <?php
 
-namespace SMartins\PassportMultiauth;
+namespace GViana\PassportMultiauth;
 
 use Illuminate\Database\Eloquent\Model;
 

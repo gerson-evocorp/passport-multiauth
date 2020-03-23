@@ -1,12 +1,12 @@
 <?php
 
-namespace SMartins\PassportMultiauth\Tests\Unit;
+namespace GViana\PassportMultiauth\Tests\Unit;
 
 use Exception;
-use SMartins\PassportMultiauth\PassportMultiauth;
-use SMartins\PassportMultiauth\Tests\Fixtures\Models\Customer;
-use SMartins\PassportMultiauth\Tests\Fixtures\Models\User;
-use SMartins\PassportMultiauth\Tests\TestCase;
+use GViana\PassportMultiauth\PassportMultiauth;
+use GViana\PassportMultiauth\Tests\Fixtures\Models\Customer;
+use GViana\PassportMultiauth\Tests\Fixtures\Models\User;
+use GViana\PassportMultiauth\Tests\TestCase;
 
 class PassportMultiauthTest extends TestCase
 {

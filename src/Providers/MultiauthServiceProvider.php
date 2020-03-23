@@ -1,14 +1,14 @@
 <?php
 
-namespace SMartins\PassportMultiauth\Providers;
+namespace GViana\PassportMultiauth\Providers;
 
 use Illuminate\Auth\AuthServiceProvider;
 use Illuminate\Support\Facades\Event;
 use Laravel\Passport\Events\AccessTokenCreated;
-use SMartins\PassportMultiauth\Auth\AuthManager;
-use SMartins\PassportMultiauth\Http\Middleware\AddCustomProvider;
-use SMartins\PassportMultiauth\PassportMultiauth;
-use SMartins\PassportMultiauth\ProviderRepository;
+use GViana\PassportMultiauth\Auth\AuthManager;
+use GViana\PassportMultiauth\Http\Middleware\AddCustomProvider;
+use GViana\PassportMultiauth\PassportMultiauth;
+use GViana\PassportMultiauth\ProviderRepository;
 
 class MultiauthServiceProvider extends AuthServiceProvider
 {

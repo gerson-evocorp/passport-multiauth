@@ -1,10 +1,10 @@
 <?php
 
-namespace SMartins\PassportMultiauth\Tests\Unit;
+namespace GViana\PassportMultiauth\Tests\Unit;
 
 use Mockery;
-use SMartins\PassportMultiauth\Guards\GuardChecker;
-use SMartins\PassportMultiauth\Tests\TestCase;
+use GViana\PassportMultiauth\Guards\GuardChecker;
+use GViana\PassportMultiauth\Tests\TestCase;
 
 class GuardCheckerTest extends TestCase
 {
