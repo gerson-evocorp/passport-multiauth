@@ -7,6 +7,12 @@ use Symfony\Component\HttpFoundation\Request;
 
 class ServerRequest
 {
+    private $psrHttpFactory;
+
+	public function __construct(PsrHttpFactory $psrHttpFactory)
+	{
+		$this->psrHttpFactory = $psrHttpFactory;
+	}
     /**
      * @todo Switch deprecated DiactorosFactory by PsrHttpFactory
      * @param Request $symfonyRequest
@@ -14,6 +20,6 @@ class ServerRequest
      */
     public static function createRequest(Request $symfonyRequest)
     {
-        return (new PsrHttpFactory())->createRequest($symfonyRequest);
+        return $this->psrHttpFactory->createRequest($symfonyRequest);
     }
 }
